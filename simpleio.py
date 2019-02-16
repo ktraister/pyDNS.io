@@ -28,14 +28,15 @@ while True:
                 print("REQUEST_ID: ", request)
                 break
 
+        returnaddr = []
+        inreq = ""
         for line in str(myreq).split("\n"):
-            if ".dominos.io" in line:
+            if ".simple.io" in line:
                 inreq = line.split(' ')[0].replace(';', '') 
-                returnaddr = []
                 for line in inreq.split('.'):
                     if isint(line):
                         returnaddr.append(str(line)+".")
-
+        
         if len(returnaddr) > 4:
             returnaddr = returnaddr[:4]
 
